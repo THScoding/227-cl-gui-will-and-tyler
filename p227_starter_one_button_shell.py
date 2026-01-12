@@ -1,8 +1,10 @@
 import subprocess # setup for button 
 import tkinter as tk
 import tkinter.scrolledtext as tksc
-from 
-    command = ["ping", "localhost"]
+from tkinter import filedialog
+from tkinter.filedialog import asksaveasfilename
+
+command = ["ping", "localhost"]
     # Windows version to limit to 4 requests: command = ["ping", "localhost", "-n", "4"]
     # Mac version to limit to 4 requests:     command = ["ping", "localhost", "-n", "4"]
     
