@@ -1,15 +1,15 @@
-import subprocess # setup for button 
+# p227_starter_one_button_shell.py
+# Note this will not run in the code editor and must be downloaded
+
+import subprocess
 import tkinter as tk
 import tkinter.scrolledtext as tksc
 from tkinter import filedialog
 from tkinter.filedialog import asksaveasfilename
 
-command = ["ping", "localhost"]
-    # Windows version to limit to 4 requests: command = ["ping", "localhost", "-n", "4"]
-    # Mac version to limit to 4 requests:     command = ["ping", "localhost", "-n", "4"]
-    
-    subprocess.run(command)
-  
+def do_command():
+    subprocess.call("ping localhost")
+
 root = tk.Tk()
 frame = tk.Frame(root)
 frame.pack()
