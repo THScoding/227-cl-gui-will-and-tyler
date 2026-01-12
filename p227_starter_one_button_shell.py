@@ -16,9 +16,6 @@ frame.pack()
 
 # set up button to run the do_command function
 ping_btn = tk.Button(frame, text="ping", command=do_command)
-ping_btn.pack()
-
-root.mainloop()
 # creates the frame with label for the text box
 frame_URL = tk.Frame(root, pady=10,  bg="black") # change frame color
 frame_URL.pack()
@@ -38,3 +35,9 @@ url_entry.pack(side=tk.LEFT)
 
 frame = tk.Frame(root,  bg="black") # change frame color
 frame.pack()
+ping_btn.pack()
+
+root.mainloop()
+# Adds an output box to GUI.
+command_textbox = tksc.ScrolledText(frame, height=10, width=100)
+command_textbox.pack()
