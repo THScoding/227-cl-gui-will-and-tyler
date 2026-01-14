@@ -13,6 +13,14 @@ from tkinter.filedialog import asksaveasfilename
 def do_command(command):
     global command_textbox
     
+    # If url_entry is blank, use localhost IP address 
+    url_val = url_entry.get()
+    
+    if (len(url_val) == 0):
+        # url_val = "127.0.0.1"
+        url_val = "::1"
+
+    
     command_textbox.delete(1.0, tk.END)
     command_textbox.insert(tk.END, command + " working....\n")
     command_textbox.update()
@@ -26,15 +34,9 @@ def do_command(command):
 # to use the text box for input to the functions
 #global command_textbox, url_entry
 
-    # If url_entry is blank, use localhost IP address 
-    url_val = url_entry.get()
-    if (len(url_val) == 0):
-        # url_val = "127.0.0.1"
-        url_val = "::1"
 
 
-def do_command():
-    subprocess.call("ping localhost")
+
 
 
 root = tk.Tk()
@@ -43,7 +45,6 @@ frame.pack()
 
 # set up button to run the do_command function
 
-ping_btn = tk.Button(frame, text="ping", command=do_command)
 
 # Makes the command button pass it's name to a function using lambda
 # CODE TO ADD
@@ -52,6 +53,7 @@ ping_btn = tk.Button(frame, text="ping", command=do_command)
 # Save function.
 # CODE TO ADD
 # Modifies the ping button parameters.
+
 ping_btn = tk.Button(frame, text="Check to see if a URL is up and active", 
     command=lambda:do_command("ping"),
     compound="center",
@@ -62,11 +64,11 @@ ping_btn = tk.Button(frame, text="Check to see if a URL is up and active",
     bg="yellow", activebackground="gray")
 ping_btn.pack() 
 
-def do_command():#makes nslookup button 
-    subprocess.call("nslookup")
+
 
 nslookup_btn = tk.Button(frame, text="find ip adresses or domain names", 
     command=lambda:do_command("nslookup"),
+    
     compound="center",
     font=("arial", 12),
     bd=0, 
@@ -74,10 +76,6 @@ nslookup_btn = tk.Button(frame, text="find ip adresses or domain names",
     cursor="heart",
     bg="green", activebackground="blue")
 nslookup_btn.pack() 
-
-
-def do_command():#makes tracert button
-    subprocess.call("tracert")
 
 tracert_btn = tk.Button(frame, text="map path of data packets", 
     command=lambda:do_command("tracert"),
