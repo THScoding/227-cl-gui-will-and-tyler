@@ -6,6 +6,8 @@ import tkinter as tk
 import tkinter.scrolledtext as tksc
 from tkinter import filedialog
 from tkinter.filedialog import asksaveasfilename
+# Adds an output box to GUI.
+
 
 # CODE TO ADD
 # Modify the do_command function:
@@ -42,6 +44,7 @@ def do_command(command):
 root = tk.Tk()
 frame = tk.Frame(root)
 frame.pack()
+
 
 # set up button to run the do_command function
 
@@ -89,8 +92,7 @@ tracert_btn.pack()
 
 
 
-def do_command():#makes save button
-    subprocess.call("Save button")
+
 
 # CODE TO ADD
 # Save function.
@@ -131,12 +133,11 @@ url_entry.pack(side=tk.LEFT)
 frame = tk.Frame(root,  bg="black") # change frame color
 frame.pack()
 ping_btn.pack()
+command_textbox = tksc.ScrolledText(frame, height=20, width=100)
+command_textbox.pack()
 
 root.mainloop()
-# Adds an output box to GUI.
-command_textbox = tksc.ScrolledText(frame, height=10, width=100)
 
-command_textbox.pack()
 
 
 
