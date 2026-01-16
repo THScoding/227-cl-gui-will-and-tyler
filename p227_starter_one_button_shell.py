@@ -41,7 +41,7 @@ def do_command(command):
 
 
 
-root = tk.Tk()
+root = tk.Tk() # creates frame 
 frame = tk.Frame(root)
 frame.pack()
 
@@ -57,7 +57,7 @@ frame.pack()
 # CODE TO ADD
 # Modifies the ping button parameters.
 
-ping_btn = tk.Button(frame, text="Check to see if a URL is up and active", 
+ping_btn = tk.Button(frame, text="Check to see if a URL is up and active", # customizes ping buttons 
     command=lambda:do_command("ping"),
     compound="center",
     font=("comic sans", 12),
@@ -65,11 +65,12 @@ ping_btn = tk.Button(frame, text="Check to see if a URL is up and active",
     relief="flat",
     cursor="heart",
     bg="yellow", activebackground="gray")
+p
 ping_btn.pack() 
 
 
 
-nslookup_btn = tk.Button(frame, text="find ip adresses or domain names", 
+nslookup_btn = tk.Button(frame, text="find ip adresses or domain names", # creates nslookup button
     command=lambda:do_command("nslookup"),
     
     compound="center",
@@ -80,7 +81,7 @@ nslookup_btn = tk.Button(frame, text="find ip adresses or domain names",
     bg="green", activebackground="blue")
 nslookup_btn.pack() 
 
-tracert_btn = tk.Button(frame, text="map path of data packets", 
+tracert_btn = tk.Button(frame, text="map path of data packets", #tracert button creation and customization
     command=lambda:do_command("tracert"),
     compound="center",
     font=("arial", 12),
@@ -95,7 +96,7 @@ tracert_btn.pack()
 
 
 # CODE TO ADD
-# Save function.
+# Save function. #save button function 
 def mSave():
   filename = asksaveasfilename(defaultextension='.txt',filetypes = (('Text files', '*.txt'),('Python files', '*.py *.pyw'),('All files', '*.*')))
   if filename is None:
@@ -106,7 +107,7 @@ def mSave():
   file.write(text_to_save)
   file.close()
   
-save_btn = tk.Button(frame, text="save stuff", command=lambda:do_command("Save button"))
+save_btn = tk.Button(frame, text="save stuff", command=lambda:do_command("Save button")) #creates save button
 
 save_btn.pack()
 
@@ -117,7 +118,7 @@ save_btn.pack()
 frame_URL = tk.Frame(root, pady=10,  bg="black") # change frame color
 frame_URL.pack()
 
-# decorative label
+# decorative label # url input entry customization 
 url_label = tk.Label(frame_URL, text="Enter a URL of interest: ", 
     compound="center",
     font=("comic sans", 14),
@@ -127,7 +128,7 @@ url_label = tk.Label(frame_URL, text="Enter a URL of interest: ",
     fg="mediumpurple3",
     bg="red")
 url_label.pack(side=tk.LEFT)
-url_entry= tk.Entry(frame_URL,  font=("comic sans", 14)) # change font
+url_entry= tk.Entry(frame_URL,  font=("comic sans", 15)) # change font
 url_entry.pack(side=tk.LEFT)
 
 frame = tk.Frame(root,  bg="black") # change frame color
